@@ -122,6 +122,14 @@ Route::post('/admin/login', function (Request $request) {
         return redirect()->route('home');
     })->name('admin.logout');
 
+    use Illuminate\Support\Facades\Artisan;
+
+Route::get('/run-migrate', function () {
+    Artisan::call('migrate', ['--force' => true]);
+    Artisan::call('db:seed', ['--force' => true]);
+    return 'Migration and seeding completed!';
+});
+
 
 
 
