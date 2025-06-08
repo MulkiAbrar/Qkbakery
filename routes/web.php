@@ -116,13 +116,20 @@ Route::get('/dbtest', function () {
     }
 });
 
+use Illuminate\Support\Facades\Schema;
+
 Route::get('/product-test', function () {
     try {
+        if (!Schema::hasTable('products')) {
+            return "❌ Tabel 'products' tidak ditemukan di database.";
+        }
+
         $products = \App\Models\Product::all();
-        return $products;
+        return response()->json($products);
     } catch (\Exception $e) {
-        return "❌ Error: " . $e->getMessage();
+        return "❌ ERROR: " . $e->getMessage();
     }
 });
+
 
 
