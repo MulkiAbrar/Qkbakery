@@ -22,6 +22,8 @@ Route::view('/payment', 'payment');
 
 // Resource Product (CRUD lengkap di /product)
 Route::resource('product', ProductController::class);
+Route::get('/product/{id}', [ProductController::class, 'show']);
+
 
 // Admin khusus product
 Route::get('/admin/products', [ProductController::class, 'admin'])->name('products.admin');
