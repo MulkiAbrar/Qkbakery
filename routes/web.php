@@ -136,12 +136,12 @@ Route::post('/admin/login', function (Request $request) {
 // });
 // use Illuminate\Support\Facades\Artisan;
 
-// Route::get('/clear', function () {
-//     Artisan::call('config:clear');
-//     Artisan::call('cache:clear');
-//     Artisan::call('view:clear');
-//     return 'Cache cleared!';
-// });
+Route::get('/clear', function () {
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('view:clear');
+    return 'Cache cleared!';
+});
 
 
 
