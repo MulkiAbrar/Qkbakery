@@ -122,16 +122,19 @@ Route::post('/admin/login', function (Request $request) {
         return redirect()->route('home');
     })->name('admin.logout');
 
-   use Illuminate\Support\Facades\Artisan;
+// use Illuminate\Support\Facades\Artisan;
 
-Route::get('/run-migrate', function () {
-    try {
-        Artisan::call('migrate', ['--force' => true]);
-        Artisan::call('db:seed', ['--force' => true]);
-        return 'Migration and seeding completed!';
-    } catch (\Exception $e) {
-        return 'Error: ' . $e->getMessage();
-    }
+// Route::get('/run-migrate', function () {
+//     try {
+//         Artisan::call('migrate', ['--force' => true]);
+//         Artisan::call('db:seed', ['--force' => true]);
+//         return 'Migration and seeding completed!';
+//     } catch (\Exception $e) {
+//         return 'Error: ' . $e->getMessage();
+//     }
+// });
+Route::get('/test', function () {
+    return 'Hello from Railway!';
 });
 
 
