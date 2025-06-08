@@ -116,3 +116,13 @@ Route::get('/dbtest', function () {
     }
 });
 
+Route::get('/product-test', function () {
+    try {
+        $products = \App\Models\Product::all();
+        return $products;
+    } catch (\Exception $e) {
+        return "❌ Error: " . $e->getMessage();
+    }
+});
+
+
