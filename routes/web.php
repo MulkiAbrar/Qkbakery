@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Session;
 
+Route::redirect('/', '/home');
 
 
 Route::get('/home', function () {
