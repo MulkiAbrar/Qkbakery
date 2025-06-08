@@ -131,7 +131,7 @@
                             <div class="col-lg-8">
                                 <p class="text-primary text-uppercase fw-bold mb-2">{{ __('messages.best_bakery') }}</p>
                                 <h1 class="display-1 text-light mb-4 animated slideInDown">{{__ ('messages.welcome') }}</h1>
-                                <a href="{{ ("produk") }}" class="btn btn-primary rounded-pill py-3 px-5">{{ __('messages.shop_now') }}</a>
+                                <a href="{{ url("product") }}" class="btn btn-primary rounded-pill py-3 px-5">{{ __('messages.shop_now') }}</a>
                             </div>
                         </div>
                     </div>
@@ -145,7 +145,7 @@
                             <div class="col-lg-8">
                                 <p class="text-primary text-uppercase fw-bold mb-2">{{ __('messages.best_bakery') }}</p>
                                 <h1 class="display-1 text-light mb-4 animated slideInDown">{{ __('messages.we_bake_with_love') }}</h1>
-                                <a href="{{ ("produk") }}" class="btn btn-primary rounded-pill py-3 px-5">{{ __('messages.shop.now') }}</a>
+                                <a href="{{ url("product") }}" class="btn btn-primary rounded-pill py-3 px-5">{{ __('messages.shop.now') }}</a>
                             </div>
                         </div>
                     </div>
