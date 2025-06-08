@@ -134,8 +134,13 @@ Route::post('/admin/login', function (Request $request) {
 //         return 'Error: ' . $e->getMessage();
 //     }
 // });
-Route::get('/test', function () {
-    return 'Hello from Railway!';
+use Illuminate\Support\Facades\Artisan;
+
+Route::get('/clear', function () {
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('view:clear');
+    return 'Cache cleared!';
 });
 
 
