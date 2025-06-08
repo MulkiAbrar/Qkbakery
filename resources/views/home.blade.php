@@ -82,7 +82,7 @@
                 <a href="{{ url('about') }}" class="nav-link">{{ __('messages.about') }}</a>
             </li>
             <li class="nav-item">
-                <a href="{{ url('product') }}" class="nav-link">{{ __('messages.product') }}</a>
+                <a href="{{ url("product") }}" class="nav-link">{{ __('messages.product') }}</a>
             </li>
             <li class="nav-item">
                 <a href="{{ url('kontak') }}" class="nav-link">{{ __('messages.contact') }}</a>
@@ -145,7 +145,7 @@
                             <div class="col-lg-8">
                                 <p class="text-primary text-uppercase fw-bold mb-2">{{ __('messages.best_bakery') }}</p>
                                 <h1 class="display-1 text-light mb-4 animated slideInDown">{{ __('messages.we_bake_with_love') }}</h1>
-                                <a href="{{ url("product") }}" class="btn btn-primary rounded-pill py-3 px-5">{{ __('messages.shop.now') }}</a>
+                                <a href="{{ url("product.index") }}" class="btn btn-primary rounded-pill py-3 px-5">{{ __('messages.shop.now') }}</a>
                             </div>
                         </div>
                     </div>
