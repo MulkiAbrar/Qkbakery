@@ -27,30 +27,37 @@ class ProductController extends Controller
     }
 
     public function store(Request $request)
-    {
+{
+    $request->validate([
+        'nama' => 'required',
+        'gambar' => 'nullable|image|mimes:png,jpg,jpeg|max:2048',
+        'harga' => 'required|numeric',
+        'deskripsi' => 'nullable'
+    ]);
 
-        $request->validate([
-            'nama' => 'required',
-            'gambar' =>'nullable|image|mimes:png,jpg,jpeg|max:2048',
-            'harga' => 'required|numeric',
-            'deskripsi' =>'nullable'
-        ]);
+    $imagePath = null;
 
-        $imagePath = null;
-        if ($request->hasFile('gambar')) {
-        $path = $request->file('gambar')->store('produk', 'public');
-        $imagePath = 'storage/' . $path;
+    if ($request->hasFile('gambar')) {
+        $gambar = $request->file('gambar');
+        $namaFile = time() . '_' . $gambar->getClientOriginalName();
+
+        // Simpan ke public/images/produk
+        $gambar->move(public_path('images/produk'), $namaFile);
+
+        // Simpan path untuk ditampilkan ke user
+        $imagePath = 'images/produk/' . $namaFile;
     }
 
-        Product::create([
-            'nama' => $request->nama,
-            'gambar' => $imagePath,
-            'harga' => $request->harga,
-            'deskripsi' => $request->deskripsi
-        ]);
+    Product::create([
+        'nama' => $request->nama,
+        'gambar' => $imagePath,
+        'harga' => $request->harga,
+        'deskripsi' => $request->deskripsi
+    ]);
 
-        return redirect()->route('product.index')->with('success', 'Produk berhasil ditambahkan');
-    }
+    return redirect()->route('product.index')->with('success', 'Produk berhasil ditambahkan');
+}
+
 
     public function show(string $id)
     {
