@@ -41,22 +41,23 @@ class ProductController extends Controller
         $gambar = $request->file('gambar');
         $namaFile = time() . '_' . $gambar->getClientOriginalName();
 
-        // Simpan ke public/images/produk
-        $gambar->move(public_path('images/produk'), $namaFile);
+        // Simpan ke public/img/produk
+        $gambar->move(public_path('img/produk'), $namaFile);
 
-        // Simpan path untuk ditampilkan ke user
-        $imagePath = 'images/produk/' . $namaFile;
+        // Simpan path relatif dari folder public
+        $imagePath = 'img/produk/' . $namaFile;
     }
 
     Product::create([
         'nama' => $request->nama,
-        'gambar' => $imagePath,
+        'gambar' => $imagePath, // Simpan path relatif
         'harga' => $request->harga,
         'deskripsi' => $request->deskripsi
     ]);
 
     return redirect()->route('product.index')->with('success', 'Produk berhasil ditambahkan');
 }
+
 
 
     public function show(string $id)
@@ -106,6 +107,6 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $product->delete();
-        return redirect()->route('product.edit');
+        return redirect()->route('product.editAdmin');
     }
 }
