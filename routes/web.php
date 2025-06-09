@@ -30,7 +30,7 @@ Route::get('/adminproduct', [ProductController::class , 'admin'])->name('product
 Route::get('product/{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
 Route::put('product/{id}', [ProductController::class, 'update'])->name('product.update');
 
-Route::get('/admin/products', [ProductController::class, 'admin'])->name('products.index');
+Route::get('/admin/products', [ProductController::class, 'admin'])->name('product.editAdmin');
 Route::get('/admin/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
 Route::post('/admin/products/{id}/update', [ProductController::class, 'update'])->name('products.update');
 Route::post('/admin/products/{id}/destroy', [ProductController::class, 'destroy'])->name('products.destroy');
