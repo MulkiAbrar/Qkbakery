@@ -55,7 +55,7 @@ class ProductController extends Controller
         'deskripsi' => $request->deskripsi
     ]);
 
-    return redirect()->route('product.index')->with('success', 'Produk berhasil ditambahkan');
+    return redirect()->route('editAdmin')->with('success', 'Produk berhasil ditambahkan');
 }
 
 
