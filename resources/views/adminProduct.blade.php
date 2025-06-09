@@ -164,58 +164,57 @@
                 <h1 class="display-6 mb-4">{{ __('messages.explore') }}</h1>
             </div>
             <div class="container">
-    <div class="row g-4">
-   <h1>{{ __('messages.list_order') }}</h1>
-
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>{{ __('messages.name_customer') }}</th>
-            <th>{{ __('messages.product') }}</th>
-            <th>{{ __('messages.number') }}</th>
-            <th>{{ __('messages.total') }}</th>
-            <th>{{ __('messages.status') }}</th>
-            <th>{{ __('messages.order_date') }}</th>
-            <th>{{ __('messages.transfer') }}</th>
-            <th>{{ __('messages.action') }}</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($orders as $order)
-        <tr>
-            <td>{{ $order->user_name }}</td>
-            <td>{{ $order->product ? $order->product->nama : 'Produk tidak ditemukan' }}</td>
-            <td>{{ $order->quantity }}</td>
-            <td>Rp {{ number_format($order->total_price) }}</td>
-            <td>
-                @if ($order->status === 'pending')
-                    <span style="color: red;">Pending</span>
-                @else
-                    <span style="color: green;">Paid</span>
-                @endif
-            </td>
-            <td>{{ $order->created_at->format('d-m-Y H:i') }}</td>
-            <td>
-                @if ($order->payment_proof)
-                    <a href="{{ asset('storage/'.$order->payment_proof) }}" target="_blank">{{ __('messages.proof') }}</a>
-                @else
-                    <span style="color: gray;">Not yet uploaded</span>
-                @endif
-            </td>
-            <td>
-                @if ($order->status === 'pending' && $order->payment_proof)
-                <form action="{{ route('admin.verifyPayment', $order->id) }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-success btn-sm">{{ __('messages.verification') }}</button>
-                </form>
-                @else
-                    <span>-</span>
-                @endif
-            </td>
-        </tr>
-        @endforeach
-    </tbody>
-</table>
+    <div class="table-responsive">
+    <h1>{{ __('messages.list_order') }}</h1>
+    <table class="table table-bordered text-center align-middle">
+        <thead>
+            <tr>
+                <th>{{ __('messages.name_customer') }}</th>
+                <th>{{ __('messages.product') }}</th>
+                <th>{{ __('messages.number') }}</th>
+                <th>{{ __('messages.total') }}</th>
+                <th>{{ __('messages.status') }}</th>
+                <th>{{ __('messages.order_date') }}</th>
+                <th>{{ __('messages.transfer') }}</th>
+                <th>{{ __('messages.action') }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($orders as $order)
+            <tr>
+                <td>{{ $order->user_name }}</td>
+                <td>{{ $order->product ? $order->product->nama : 'Produk tidak ditemukan' }}</td>
+                <td>{{ $order->quantity }}</td>
+                <td>Rp {{ number_format($order->total_price) }}</td>
+                <td>
+                    @if ($order->status === 'pending')
+                        <span style="color: red;">Pending</span>
+                    @else
+                        <span style="color: green;">Paid</span>
+                    @endif
+                </td>
+                <td>{{ $order->created_at->format('d-m-Y H:i') }}</td>
+                <td>
+                    @if ($order->payment_proof)
+                        <a href="{{ asset('storage/'.$order->payment_proof) }}" target="_blank">{{ __('messages.proof') }}</a>
+                    @else
+                        <span style="color: gray;">Not yet uploaded</span>
+                    @endif
+                </td>
+                <td>
+                    @if ($order->status === 'pending' && $order->payment_proof)
+                    <form action="{{ route('admin.verifyPayment', $order->id) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-success btn-sm">{{ __('messages.verification') }}</button>
+                    </form>
+                    @else
+                        <span>-</span>
+                    @endif
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
     </div>
     </div>
     </div>
