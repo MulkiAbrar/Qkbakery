@@ -29,6 +29,14 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset ("css/style.css") }}" rel="stylesheet">
+    <script>
+        window.addEventListener('load', function () {
+            const spinner = document.getElementById('spinner');
+            if (spinner) {
+                spinner.classList.remove('show');
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -36,14 +44,6 @@
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" role="status"></div>
     </div>
-    <script>
-    window.addEventListener('load', function () {
-        const spinner = document.getElementById('spinner');
-        if (spinner) {
-            spinner.classList.remove('show');
-        }
-    });
-</script>
     <!-- Spinner End -->
 
 
@@ -81,11 +81,12 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0 " style="margin-right: 238px;" >
+            <ul class="navbar-nav ms-auto p-4 p-lg-0 text-center w-100">
+            <li class="nav-item">
                 <a href="{{ url ("admin") }}" class="nav-item nav-link Active" style="padding-right: 180px">{{ __('messages.back') }}</a>
+            </li>
             </div>
-            </div>
-            <div class=" d-none d-lg-flex">
+            {{-- <div class=" d-none d-lg-flex">
                 <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle">
                     <i class="fa fa-phone text-primary"></i>
                 </div>
@@ -93,7 +94,7 @@
                     <small class="text-primary mb-0">{{ __('messages.call_us') }}</small>
                     <p class="text-light fs-5 mb-0">{{ __('messages.phone') }}</p>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </nav>
     <!-- Navbar End -->

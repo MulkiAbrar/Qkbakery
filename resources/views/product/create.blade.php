@@ -73,11 +73,14 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0 " style="margin-right: 550px;" >
+            <ul class="navbar-nav ms-auto p-4 p-lg-0 text-center w-100">
+            <li class="nav-item">
                 <a href="{{ url ("admin") }}" class="nav-item nav-link Active">{{ __('messages.back') }}</a>
+            </li>
+            <li class="nav-item">
                 <a href="{{ url('/admin/products') }}" class="nav-item nav-link Active">{{ __('messages.product') }}</a>
-            </div>
-            </div>
+            </li>
+        </div>
             {{-- <div class=" d-none d-lg-flex">
                 <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle">
                     <i class="fa fa-phone text-primary"></i>
