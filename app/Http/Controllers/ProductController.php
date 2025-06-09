@@ -49,7 +49,7 @@ class ProductController extends Controller
             'deskripsi' => $request->deskripsi
         ]);
 
-        return redirect()->route('product.product')->with('success', 'Produk berhasil ditambahkan');
+        return redirect()->route('product.index')->with('success', 'Produk berhasil ditambahkan');
     }
 
     public function show(string $id)
