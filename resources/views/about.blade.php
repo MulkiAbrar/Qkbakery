@@ -72,27 +72,40 @@
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav ms-auto p-4 p-lg-0 text-center w-100">
-            <li class="nav-item">
-                <a href="{{ url('home') }}" class="nav-link">{{ __('messages.home') }}</a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ url('about') }}" class="nav-link">{{ __('messages.about') }}</a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ url('product') }}" class="nav-link">{{ __('messages.product') }}</a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ url('kontak') }}" class="nav-link">{{ __('messages.contact') }}</a>
-            </li>
-            <li class="nav-item" >
-                <a href="{{ url('cart') }}" class="nav-link">
-                    <img src="{{ asset('img/icons8-cart-50.png') }}" alt="Cart" width="28" class="hover-image" style="padding-top: 1px;">
-                </a>
-            </li>
-        </ul>
+   <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav ms-auto p-4 p-lg-0 text-center w-100">
+        <li class="nav-item">
+            <a href="{{ url('home') }}" class="nav-link">{{ __('messages.home') }}</a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ url('about') }}" class="nav-link">{{ __('messages.about') }}</a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ url('product') }}" class="nav-link">{{ __('messages.product') }}</a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ url('kontak') }}" class="nav-link">{{ __('messages.contact') }}</a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ url('/admin/login') }}" class="nav-link">{{ __('messages.admin') }}</a>
+        </li>
+
+        <!-- Cart in mobile only -->
+        <li class="nav-item d-block d-lg-none mt-2">
+            <a href="{{ url('cart') }}" class="nav-link">
+                <img src="{{ asset('img/icons8-cart-50.png') }}" alt="Cart" width="28">
+            </a>
+        </li>
+    </ul>
+
+    <!-- Cart in desktop only -->
+    <div class="d-none d-lg-block">
+        <a href="{{ url('cart') }}" class="nav-link">
+            <img src="{{ asset('img/icons8-cart-50.png') }}" alt="Cart" width="28">
+        </a>
     </div>
+</div>
+
 
 
     <!-- Hanya tampil di desktop -->

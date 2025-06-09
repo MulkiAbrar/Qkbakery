@@ -125,11 +125,6 @@
             <li class="nav-item">
                 <a href="{{ url('kontak') }}" class="nav-link">{{ __('messages.contact') }}</a>
             </li>
-            <li class="nav-item" >
-                <a href="{{ url('cart') }}" class="nav-link">
-                    <img src="{{ asset('img/icons8-cart-50.png') }}" alt="Cart" width="28" class="hover-image" style="padding-top: 1px;">
-                </a>
-            </li>
         </ul>
     </div>
 
