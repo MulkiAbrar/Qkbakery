@@ -325,7 +325,7 @@
                             <img class="img-fluid bg-light rounded p-1" src="img/product-5.jpg" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light rounded p-1" src="img/product-5.jpg" alt="Image">
+                            <img class="img-fluid bg-light rounded p-1" src="img/product-6.jpg" alt="Image">
                         </div>
                     </div>
                 </div>
