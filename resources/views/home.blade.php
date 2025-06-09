@@ -306,8 +306,8 @@
                     <a class="btn btn-link" href="">Terms & Condition</a>
                     <a class="btn btn-link" href="">Support</a>
                 </div> --}}
-                {{-- <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Photo Gallery</h4>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">{{ __('messages.gallery_photo') }}</h4>
                     <div class="row g-2">
                         <div class="col-4">
                             <img class="img-fluid bg-light rounded p-1" src="img/product-1.jpg" alt="Image">
@@ -326,7 +326,7 @@
                         </div>
                         <div class="col-4">
                             <img class="img-fluid bg-light rounded p-1" src="img/product-1.jpg" alt="Image">
-                        </div> --}}
+                        </div>
                     </div>
                 </div>
             </div>
