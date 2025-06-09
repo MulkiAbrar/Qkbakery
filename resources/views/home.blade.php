@@ -78,35 +78,35 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav ms-auto p-4 p-lg-0 text-center w-100">
-            <li class="nav-item">
-                <a href="{{ url('home') }}" class="nav-link">{{ __('messages.home') }}</a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ url('about') }}" class="nav-link">{{ __('messages.about') }}</a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ url("product") }}" class="nav-link">{{ __('messages.product') }}</a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ url('kontak') }}" class="nav-link">{{ __('messages.contact') }}</a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ url('/admin/login') }}" class="nav-link">{{ __('messages.admin') }}</a>
-            </li>
-            <li class="nav-item" >
+        <div class="d-flex flex-lg-row flex-column w-100 align-items-center">
+            <!-- Menu utama -->
+            <ul class="navbar-nav me-lg-auto p-4 p-lg-0 text-center">
+                <li class="nav-item">
+                    <a href="{{ url('home') }}" class="nav-link">{{ __('messages.home') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('about') }}" class="nav-link">{{ __('messages.about') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('product') }}" class="nav-link">{{ __('messages.product') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('kontak') }}" class="nav-link">{{ __('messages.contact') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('/admin/login') }}" class="nav-link">{{ __('messages.admin') }}</a>
+                </li>
+            </ul>
+
+            <!-- Keranjang belanja -->
+            <div class="text-center mt-3 mt-lg-0">
                 <a href="{{ url('cart') }}" class="nav-link">
                     <img src="{{ asset('img/icons8-cart-50.png') }}" alt="Cart" width="28" class="hover-image" style="padding-top: 1px;">
                 </a>
-            </li>
-            <li>
-{{-- <a href="{{ route('lang.switch', ['locale' => 'id']) }}">🇮🇩 Indonesia</a>
-<a href="{{ route('lang.switch', ['locale' => 'en']) }}">🇬🇧 English</a>
-
-<p>Bahasa saat ini: {{ app()->getLocale() }}</p> --}}
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
+
 
 
     <!-- Hanya tampil di desktop -->
