@@ -56,11 +56,11 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
 
-            if (!$product) {
-                abort(404);
-            }
+        if (!$product) {
+            abort(404);
+        }
 
-            return view('product.show', compact('product'));
+        return view('product.show', compact('product'));
     }
 
 
