@@ -131,10 +131,10 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="row img-twice position-relative h-100">
                         <div class="col-6">
-                            <img class="img-fluid rounded" src="img/about-1.jpg" alt="">
+                            <img class="img-fluid rounded" src="img/about-1.jpeg" alt="">
                         </div>
                         <div class="col-6 align-self-end">
-                            <img class="img-fluid rounded" src="img/about-2.jpg" alt="">
+                            <img class="img-fluid rounded" src="img/about-2.jpeg" alt="">
                         </div>
                     </div>
                 </div>
@@ -281,22 +281,22 @@
                     <h4 class="text-light mb-4">{{ __('messages.gallery_photo') }}</h4>
                     <div class="row g-2">
                         <div class="col-4">
-                            <img class="img-fluid bg-light rounded p-1" src="img/product-1.jpg" alt="Image">
+                            <img class="img-fluid bg-light rounded p-1" src="img/product-1.jpeg" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light rounded p-1" src="img/product-2.jpg" alt="Image">
+                            <img class="img-fluid bg-light rounded p-1" src="img/product-2.jpeg" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light rounded p-1" src="img/product-3.jpg" alt="Image">
+                            <img class="img-fluid bg-light rounded p-1" src="img/product-3.jpeg" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light rounded p-1" src="img/product-2.jpg" alt="Image">
+                            <img class="img-fluid bg-light rounded p-1" src="img/product-4.jpeg" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light rounded p-1" src="img/product-3.jpg" alt="Image">
+                            <img class="img-fluid bg-light rounded p-1" src="img/product-5.jpeg" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light rounded p-1" src="img/product-1.jpg" alt="Image">
+                            <img class="img-fluid bg-light rounded p-1" src="img/product-5.jpeg" alt="Image">
                         </div>
                     </div>
                 </div>
