@@ -52,7 +52,7 @@ Route::delete('/checkout/remove/{id}', [CheckoutController::class, 'remove'])->n
 Route::post('/submit-order', [OrderController::class, 'submitOrder'])->name('order.submit');
 Route::get('/payment/{order}', [OrderController::class, 'showPayment'])->name('payment.show');
 Route::post('/payment/confirm/{order}', [OrderController::class, 'confirmPayment'])->name('payment.confirm');
-Route::get('/admin/orders', [OrderController::class, 'adminOrders'])->name('admin.orders');
+Route::get('/admin/orders', [OrderController::class, 'adminOrders'])->name('adminProduct');
 
 // Admin orders
 Route::prefix('admin')->group(function () {
