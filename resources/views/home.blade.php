@@ -78,7 +78,6 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="d-flex flex-lg-row flex-column w-100 align-items-center">
         <ul class="navbar-nav ms-auto p-4 p-lg-0 text-center w-100">
             <li class="nav-item">
                 <a href="{{ url('home') }}" class="nav-link">{{ __('messages.home') }}</a>
@@ -100,6 +99,7 @@
                     <img src="{{ asset('img/icons8-cart-50.png') }}" alt="Cart" width="28" class="hover-image" style="padding-top: 1px;">
                 </a>
             </li>
+
         </ul>
         </div>
     </div>
