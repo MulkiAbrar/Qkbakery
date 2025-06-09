@@ -191,15 +191,14 @@
                         {{ __('messages.edit') }}
                     </a>
 
-                    <form action="{{ route('product.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus produk ini?')">
+                    <form action="{{ route('product.destroy', $product->id) }}" method="POST" style="display: inline;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="button-delete">
+                        <button type="submit" class="button-delete" onclick="return confirm('Yakin ingin menghapus produk ini?')">
                             {{ __('messages.delete') }}
                         </button>
                     </form>
                 </div>
-
             </div>
         </div>
     </div>
