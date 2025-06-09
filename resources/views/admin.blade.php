@@ -78,7 +78,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav ms-auto p-4 p-lg-0 text-center w-100">
         <li class="nav-item">
-            <a href="{{ url('home') }}" class="nav-link">{{ __('messages.home') }}</a>
+            <a href="{{ url('admin') }}" class="nav-link">{{ __('messages.home') }}</a>
         </li>
         <li class="nav-item">
             <a href="{{ url('create') }}" class="nav-link">{{ __('messages.add') }}</a>
@@ -90,8 +90,8 @@
             <a href="{{ url('/admin/products') }}" class="nav-link">{{ __('messages.product') }}</a>
         </li>
 
-        <!-- Logout icon (mobile only) -->
-        <li class="nav-item d-block d-lg-none mt-2">
+        <!-- Logout icon (mobile & desktop) -->
+        <li class="nav-item mt-2">
             <form action="{{ route('admin.logout') }}" method="POST" style="display: inline;">
                 @csrf
                 <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">
@@ -100,16 +100,6 @@
             </form>
         </li>
     </ul>
-
-    <!-- Logout icon (desktop only) -->
-    <div class="d-none d-lg-block">
-        <form action="{{ route('admin.logout') }}" method="POST" style="display: inline;">
-            @csrf
-            <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">
-                <img src="{{ asset('img/logout.png') }}" alt="Logout" width="28" class="hover-image">
-            </button>
-        </form>
-    </div>
 </div>
 
 
