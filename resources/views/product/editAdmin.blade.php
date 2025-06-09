@@ -187,17 +187,19 @@
                 <img class="card-img" src="{{ asset($product->gambar) }}" alt="{{ $product->nama }}">
 
                 <div class="product-overlay">
-                    <a class="button-edit" href="{{ route('product.edit', $product->id) }}">
-                        {{ __('messages.edit') }}
-                    </a>
+                    @if($product->id)
+                        <a class="button-edit" href="{{ route('product.edit', $product->id) }}">
+                            {{ __('messages.edit') }}
+                        </a>
 
-                    <form action="{{ route('product.destroy', $product->id) }}" method="POST" style="display: inline;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="button-delete" onclick="return confirm('Yakin ingin menghapus produk ini?')">
-                            {{ __('messages.delete') }}
-                        </button>
-                    </form>
+                        <form action="{{ route('product.destroy', $product->id) }}" method="POST" style="display: inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="button-delete" onclick="return confirm('Yakin ingin menghapus produk ini?')">
+                                {{ __('messages.delete') }}
+                            </button>
+                        </form>
+                    @endif
                 </div>
             </div>
         </div>
@@ -205,6 +207,7 @@
 @empty
     <p class="text-center">{{ __('messages.empty.product') }}</p>
 @endforelse
+
 
 
     </div>

@@ -28,35 +28,40 @@ class ProductController extends Controller
 
     public function store(Request $request)
 {
+    // Validasi input
     $request->validate([
-        'nama' => 'required',
+        'nama' => 'required|string|max:255',
         'gambar' => 'nullable|image|mimes:png,jpg,jpeg|max:2048',
         'harga' => 'required|numeric',
-        'deskripsi' => 'nullable'
+        'deskripsi' => 'nullable|string'
     ]);
 
+    // Inisialisasi path gambar
     $imagePath = null;
 
+    // Proses upload gambar jika ada
     if ($request->hasFile('gambar')) {
         $gambar = $request->file('gambar');
-        $namaFile = time() . '_' . $gambar->getClientOriginalName();
+        $namaFile = time() . '_' . preg_replace('/\s+/', '_', strtolower($gambar->getClientOriginalName()));
 
         // Simpan ke public/img/produk
         $gambar->move(public_path('img/produk'), $namaFile);
 
-        // Simpan path relatif dari folder public
+        // Path relatif ke folder public
         $imagePath = 'img/produk/' . $namaFile;
     }
 
+    // Simpan data ke database
     Product::create([
         'nama' => $request->nama,
-        'gambar' => $imagePath, // Simpan path relatif
+        'gambar' => $imagePath,
         'harga' => $request->harga,
         'deskripsi' => $request->deskripsi
     ]);
 
     return redirect()->route('product.index')->with('success', 'Produk berhasil ditambahkan');
 }
+
 
 
 
