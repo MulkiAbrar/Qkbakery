@@ -23,7 +23,17 @@ Route::view('/payment', 'payment');
 // Resource Product (CRUD lengkap di /product)
 Route::resource('product', ProductController::class);
 Route::get('/product/{id}', [ProductController::class, 'show']);
+Route::get('/create', [ProductController::class, 'create'])-> name('product.create');
+Route::post('/store', [ProductController::class , 'store'])->name('product.store');
+Route::get('/adminproduct', [ProductController::class , 'admin'])->name('product.admin');
 
+Route::get('product/{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
+Route::put('product/{id}', [ProductController::class, 'update'])->name('product.update');
+
+Route::get('/admin/products', [ProductController::class, 'admin'])->name('products.index');
+Route::get('/admin/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
+Route::post('/admin/products/{id}/update', [ProductController::class, 'update'])->name('products.update');
+Route::post('/admin/products/{id}/destroy', [ProductController::class, 'destroy'])->name('products.destroy');
 
 // Admin khusus product
 Route::get('/admin/products', [ProductController::class, 'admin'])->name('products.admin');
