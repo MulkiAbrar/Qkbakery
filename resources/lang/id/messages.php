@@ -30,11 +30,13 @@
         'subject' => 'Subjek',
         'messages' => 'Pesan',
         'send_messages' => 'Kirim Pesan',
+        'send' => 'Kirim',
         'add' => 'Tambah',
         'us_contact' => 'Jika Anda Memiliki Pertanyaan, Silakan Hubungi Kami',
         'categories' => 'Jelajahi Kategori Produk Roti Kami',
         'product_bakery' => '//Produk',
         'product_admin2' => '//Produk Admin',
+        'upload_proof' => 'Kirim Bukti Transfer:',
 
 
         // cart
@@ -53,13 +55,13 @@
 
         // create
         'create_product' => '//Buat Produk',
-        'input_bakery' => 'Silakan Masukkan Roti Anda',
+        'input_bakery' => 'Silakan Masukkan Kue Anda',
         'description' => 'Deskripsi',
         'image_bakery' => 'Gambar Roti',
         'save' => 'Simpan',
         'back' => 'Kembali',
         'product_admin' => 'Produk Admin',
-        'bakery_admin' => '//Admin Produk Roti',
+        'bakery_admin' => '//Admin Produk',
         'explore' => 'Jelajahi Kategori Produk Roti Kami',
         'list_order' => 'Daftar Pesanan (Admin)',
         'name_customer' => 'Nama Pelanggan',
@@ -78,6 +80,7 @@
         'description_product' => 'Kue coklat blackforest',
         'number' => 'Jumlah',
         'add_to_cart' => 'Tambah ke Keranjang',
+        'add_bakery' => 'Tambah Kue',
         'out_of_stock' => 'Stok Habis',
         'in_stock' => 'Tersedia',
         'empty_product' => 'Produk Kosong',

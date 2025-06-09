@@ -195,7 +195,7 @@
                         <form action="{{ route('products.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus produk ini?')">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="button-delete">Hapus</button>
+                            <button type="submit" class="button-delete">{{ __('messages.delete') }}</button>
                         </form>
 
                     @endif

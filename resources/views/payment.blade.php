@@ -165,10 +165,10 @@
                         @csrf
                         <input type="hidden" name="order_id" value="{{ $order->id }}">
 
-                        <label for="payment_proof">Upload Proof a Transfer:</label>
+                        <label for="payment_proof">{{ __('messages.upload_proof') }}</label>
                         <input type="file" name="payment_proof" required>
 
-                        <button type="submit" class="btn btn-primary mt-2">Upload</button>
+                        <button type="submit" class="btn btn-primary mt-2">{{ __('messages.send') }}</button>
                     </form>
                 @endif
 

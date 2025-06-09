@@ -140,7 +140,8 @@
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
-                        <p class="text-primary text-uppercase mb-2">// About Us</p>
+                        <p class="text-primary text-uppercase mb-2">{{ __('messages.about_us') }}
+                        </p>
                         <h1 class="display-6 mb-4">{{ __('messages.bake_description') }}</h1>
                         <p>{{ __('messages.description_bakery') }}</p>
                         <p>{{ __('messages.description_bakery2') }}</p>
