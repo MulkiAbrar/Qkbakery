@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>QkBakery</title>
+    <title>QkBakery - Bakery Website Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -29,6 +29,15 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <script>
+        window.addEventListener('load', function () {
+    const spinner = document.getElementById('spinner');
+    if (spinner) {
+        spinner.classList.remove('show');
+    }
+});
+
+    </script>
 </head>
 
 <body>
