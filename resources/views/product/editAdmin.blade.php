@@ -19,6 +19,8 @@
     <!-- Icon Font Stylesheet -->
     <link href="{{asset ("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css") }}" rel="stylesheet">
     <link href="{{asset ("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css") }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Libraries Stylesheet -->
     <link href="{{asset ("lib/animate/animate.min.css") }}" rel="stylesheet">
@@ -106,29 +108,42 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav ms-auto p-4 p-lg-0 text-center w-100">
-            <li class="nav-item">
-                <a href="{{ url('home') }}" class="nav-link">{{ __('messages.home') }}</a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ url('create') }}" class="nav-link">{{ __('messages.add') }}</a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ url('/admin/orders') }}" class="nav-link">{{ __('messages.order') }}</a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ url('/admin/products') }}" class="nav-link">{{ __('messages.product') }}</a>
-            </li>
-            <li class="nav-item" >
-                <form action="{{ route('admin.logout') }}" method="POST" style="display: inline;">
-                    @csrf
-                    <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">
-                        <img src="{{ asset('img/logout.png') }}" alt="Logout" width="28" class="hover-image" style="padding-left: 1px;">
-                    </button>
-                </form>
-            </li>
-        </ul>
+    <ul class="navbar-nav ms-auto p-4 p-lg-0 text-center w-100">
+        <li class="nav-item">
+            <a href="{{ url('home') }}" class="nav-link">{{ __('messages.home') }}</a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ url('create') }}" class="nav-link">{{ __('messages.add') }}</a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ url('/admin/orders') }}" class="nav-link">{{ __('messages.order') }}</a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ url('/admin/products') }}" class="nav-link">{{ __('messages.product') }}</a>
+        </li>
+
+        <!-- Logout icon (mobile only) -->
+        <li class="nav-item d-block d-lg-none mt-2">
+            <form action="{{ route('admin.logout') }}" method="POST" style="display: inline;">
+                @csrf
+                <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">
+                    <img src="{{ asset('img/logout.png') }}" alt="Logout" width="28" class="hover-image">
+                </button>
+            </form>
+        </li>
+    </ul>
+
+    <!-- Logout icon (desktop only) -->
+    <div class="d-none d-lg-block">
+        <form action="{{ route('admin.logout') }}" method="POST" style="display: inline;">
+            @csrf
+            <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">
+                <img src="{{ asset('img/logout.png') }}" alt="Logout" width="28" class="hover-image">
+            </button>
+        </form>
     </div>
+</div>
+
 </nav>
 
     <!-- Navbar End -->
