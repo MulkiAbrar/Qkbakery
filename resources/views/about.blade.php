@@ -284,19 +284,19 @@
                             <img class="img-fluid bg-light rounded p-1" src="img/product-1.jpeg" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light rounded p-1" src="img/product-2.jpeg" alt="Image">
+                            <img class="img-fluid bg-light rounded p-1" src="img/product-2.jpg" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light rounded p-1" src="img/product-3.jpeg" alt="Image">
+                            <img class="img-fluid bg-light rounded p-1" src="img/product-3.jpg" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light rounded p-1" src="img/product-4.jpeg" alt="Image">
+                            <img class="img-fluid bg-light rounded p-1" src="img/product-4.jpg" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light rounded p-1" src="img/product-5.jpeg" alt="Image">
+                            <img class="img-fluid bg-light rounded p-1" src="img/product-5.jpg" alt="Image">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light rounded p-1" src="img/product-5.jpeg" alt="Image">
+                            <img class="img-fluid bg-light rounded p-1" src="img/product-5.jpg" alt="Image">
                         </div>
                     </div>
                 </div>
