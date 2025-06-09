@@ -174,8 +174,8 @@
                     <div class="h-100">
                         <p class="text-primary text-uppercase mb-2">{{ __('messages.about_us') }}</p>
                         <h1 class="display-6 mb-4">{{ __('messages.bake_description') }}</h1>
-                        {{-- <p>{{ __('messages.') }}</p>
-                        <p>{{ __('messages.') }}</p> --}}
+                        <p>{{ __('messages.description_bakery') }}</p>
+                        {{-- <p>{{ __('messages.') }}</p> --}}
                         {{-- <div class="row g-2 mb-4">
                             <div class="col-sm-6">
                                 <i class="fa fa-check text-primary me-2"></i>Quality Products
