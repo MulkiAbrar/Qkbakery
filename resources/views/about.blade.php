@@ -142,7 +142,8 @@
                     <div class="h-100">
                         <p class="text-primary text-uppercase mb-2">// About Us</p>
                         <h1 class="display-6 mb-4">{{ __('messages.bake_description') }}</h1>
-                        <h5>{{ __('messages.description_bakery') }}</h5>
+                        <p>{{ __('messages.description_bakery') }}</p>
+                        <p>{{ __('messages.description_bakery2') }}</p>
                         {{-- <p>{{ __('messages.') }}</p> --}}
                         {{-- <div class="row g-2 mb-4">
                             <div class="col-sm-6">

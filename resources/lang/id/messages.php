@@ -47,8 +47,8 @@
         'edit' => 'Ubah',
         'delete' => 'Hapus',
         'payment' => 'Pembayaran',
-        'description_bakery' => 'Menyajikan berbagai aneka  cake, cookies & pastry dengan cita rasa yang tinggi.
-Produk yang kami buat menggunakan bahan baku yang berkwalitas dan halal sehingga aman di konsumsi oleh semua kalangan.',
+        'description_bakery' => 'Menyajikan berbagai aneka  cake, cookies & pastry dengan cita rasa yang tinggi.',
+        'description_bakery2' => 'Produk yang kami buat menggunakan bahan baku yang berkwalitas dan halal sehingga aman di konsumsi oleh semua kalangan.',
 
 
         // create
