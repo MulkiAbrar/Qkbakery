@@ -33,7 +33,7 @@ Route::put('product/{id}', [ProductController::class, 'update'])->name('product.
 Route::get('/admin/products', [ProductController::class, 'admin'])->name('products.editAdmin');
 Route::get('/admin/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
 Route::put('/admin/products/{id}/update', [ProductController::class, 'update'])->name('products.update');
-Route::delete('/admin/products/{id}/destroy', [ProductController::class, 'destroy'])->name('products.destroy');
+Route::delete('/admin/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
 
 // Admin khusus product
 Route::get('/admin/products', [ProductController::class, 'admin'])->name('products.admin');
