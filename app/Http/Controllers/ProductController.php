@@ -18,7 +18,7 @@ class ProductController extends Controller
     public function admin()
     {
         $products = Product::all();
-        return view('editAdmin', compact('products'));
+        return view('product.editAdmin', compact('products'));
     }
 
     public function create()
