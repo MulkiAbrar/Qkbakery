@@ -34,6 +34,7 @@
         'us_contact' => 'Jika Anda Memiliki Pertanyaan, Silakan Hubungi Kami',
         'categories' => 'Jelajahi Kategori Produk Roti Kami',
         'product_bakery' => '//Produk',
+        'product_admin2' => '//Produk Admin',
 
 
         // cart

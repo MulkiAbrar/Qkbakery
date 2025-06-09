@@ -137,7 +137,7 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-6 wow fadeIn" data-wow-delay="0.1s">
         <div class="container text-center pt-5 pb-3">
-            <h1 class="display-4 text-white animated slideInDown mb-3">Products</h1>
+            <h1 class="display-4 text-white animated slideInDown mb-3">{{ __('messages.product') }}</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a class="text-white" href="#">{{ __('messages.home') }}</a></li>
@@ -169,7 +169,7 @@
                 </div> --}}
             {{-- </div> --}}
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <p class="text-primary text-uppercase mb-2">// Product Admin</p>
+                <p class="text-primary text-uppercase mb-2">{{ __('messages.product_admin2') }}</p>
             </div>
             <div class="container">
     <div class="row g-4">
@@ -204,7 +204,7 @@
         </div>
     </div>
 @empty
-    <p class="text-center">{{ __('messages.empty.product') }}</p>
+    <p class="text-center">{{ __('messages.empty_product') }}</p>
 @endforelse
 
 
