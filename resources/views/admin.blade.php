@@ -90,8 +90,8 @@
             <a href="{{ url('/admin/products') }}" class="nav-link">{{ __('messages.product') }}</a>
         </li>
 
-        <!-- Logout icon (mobile & desktop) -->
-        <li class="nav-item mt-2">
+        <!-- Logout icon (setelah Produk) -->
+        <li class="nav-item mt-3">
             <form action="{{ route('admin.logout') }}" method="POST" style="display: inline;">
                 @csrf
                 <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">
@@ -101,9 +101,6 @@
         </li>
     </ul>
 </div>
-
-
-
 
 </nav>
     <!-- Navbar End -->
