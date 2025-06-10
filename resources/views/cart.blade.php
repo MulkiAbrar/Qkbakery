@@ -87,6 +87,15 @@
 .qty-btn:hover {
     background-color: #d18f29;
 }
+@media (max-width: 767px) {
+        .table th, .table td {
+            font-size: 14px;
+            padding: 8px;
+        }
+        .btn-sm {
+            font-size: 12px;
+        }
+    }
 
 </style>
 <script>
@@ -210,48 +219,48 @@ function updateQty(id, change) {
     @endif
 
     @if(count($cart) > 0)
-        <table border="1" cellpadding="10" cellspacing="0" class="cart-table">
-            <thead>
-                <tr>
-                    <th>{{ __('messages.name_bakery') }}</th>
-                    <th>{{ __('messages.price') }}</th>
-                    <th>{{ __('messages.number') }}</th>
-                    <th>{{ __('messages.total') }}</th>
-                    <th>{{ __('messages.action') }}</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($cart as $id => $item)
+        <div class="table-responsive">
+            <table class="table cart-table">
+                <thead>
                     <tr>
-                        <td>{{ $item['nama'] }}</td>
-                        <td id="price_{{ $id }}" data-price="{{ $item['harga'] }}">Rp {{ number_format($item['harga'], 0, ',', '.') }}</td>
-                        <td class="px-3 py-2">
-                        <div class="quantity-wrapper">
-                        <button type="button" class="qty-btn" onclick="updateQty({{ $id }}, -1)">-</button>
-                        <input type="number" id="qty_{{ $id }}" value="{{ $item['quantity'] }}" min="1" class="qty-input" readonly>
-                        <button type="button" class="qty-btn" onclick="updateQty({{ $id }}, 1)">+</button>
-                        </div>
-                        </td>
-                         <td id="total_{{ $id }}">Rp {{ number_format($item['harga'] * $item['quantity'], 0, ',', '.') }}</td>
-                        <td>
-                            <form action="{{ route('cart.remove', $id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="button-delete">{{ __('messages.delete') }}</button>
-                            </form>
-                            <form action="{{ route('checkout.store', $cart[$id]) }}" method="POST">
-
-                                <a class="button-edit" href="{{ url("checkout") }}">{{ __('messages.payment') }}</a>
-                            </form>
-                        </td>
+                        <th>{{ __('messages.name_bakery') }}</th>
+                        <th>{{ __('messages.price') }}</th>
+                        <th>{{ __('messages.number') }}</th>
+                        <th>{{ __('messages.total') }}</th>
+                        <th>{{ __('messages.action') }}</th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach($cart as $id => $item)
+                        <tr>
+                            <td>{{ $item['nama'] }}</td>
+                            <td data-price="{{ $item['harga'] }}">Rp {{ number_format($item['harga'], 0, ',', '.') }}</td>
+                            <td>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="updateQty({{ $id }}, -1)">-</button>
+                                    <input type="number" id="qty_{{ $id }}" value="{{ $item['quantity'] }}" min="1" class="form-control mx-1 text-center" style="width: 50px;" readonly>
+                                    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="updateQty({{ $id }}, 1)">+</button>
+                                </div>
+                            </td>
+                            <td>Rp {{ number_format($item['harga'] * $item['quantity'], 0, ',', '.') }}</td>
+                            <td>
+                                <form action="{{ route('cart.remove', $id) }}" method="POST" class="mb-1">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm">{{ __('messages.delete') }}</button>
+                                </form>
+                                <a class="btn btn-primary btn-sm" href="{{ url('checkout') }}">{{ __('messages.payment') }}</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     @else
         <p>{{ __('messages.cart_empty') }}</p>
     @endif
 </div>
+
     <!-- Product End -->
 
     <!-- Footer Start -->

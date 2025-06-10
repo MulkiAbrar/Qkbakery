@@ -70,6 +70,15 @@
 .text-center{
     text-align: center;
 }
+@media (max-width: 767px) {
+        .table th, .table td {
+            font-size: 14px;
+            padding: 8px;
+        }
+        .btn-sm {
+            font-size: 12px;
+        }
+    }
 
 
 </style>
@@ -161,8 +170,6 @@
 
 
     <!-- Product Start -->
-
-
 <div class="container mt-5">
     <h2>Checkout</h2>
 
@@ -171,51 +178,53 @@
     @endif
 
     @if(count($cart) > 0)
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>{{ __('messages.name_bakery') }}</th>
-                    <th style="padding-left: 1px; padding-top: 10px;">{{ __('messages.qty') }}</th>
-                    <th>{{ __('messages.price') }}</th>
-                    <th>{{ __('messages.total') }}</th>
-                    <th style="padding-left: 20px; padding-top 10px;">{{ __('messages.action') }}</th>
-                </tr>
-            </thead>
-            <tbody>
-                @php $grandTotal = 0; @endphp
-                @foreach($cart as $id =>$item)
-                    @php $subtotal = $item['harga'] * $item['quantity']; $grandTotal += $subtotal; @endphp
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
                     <tr>
-                        <td>{{ $item['nama'] }}</td>
-                        <td>{{ $item['quantity'] }}</td>
-                        <td>Rp{{ number_format($item['harga']) }}</td>
-                        <td>Rp{{ number_format($subtotal) }}</td>
-                        <td>
-                            <form action="{{ route('checkout.remove', $id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="button-delete">{{ __('messages.delete') }}</button>
-                                    </form>
-                        </td>
+                        <th>{{ __('messages.name_bakery') }}</th>
+                        <th>{{ __('messages.qty') }}</th>
+                        <th>{{ __('messages.price') }}</th>
+                        <th>{{ __('messages.total') }}</th>
+                        <th>{{ __('messages.action') }}</th>
                     </tr>
+                </thead>
+                <tbody>
+                    @php $grandTotal = 0; @endphp
+                    @foreach($cart as $id =>$item)
+                        @php $subtotal = $item['harga'] * $item['quantity']; $grandTotal += $subtotal; @endphp
+                        <tr>
+                            <td>{{ $item['nama'] }}</td>
+                            <td>{{ $item['quantity'] }}</td>
+                            <td>Rp{{ number_format($item['harga']) }}</td>
+                            <td>Rp{{ number_format($subtotal) }}</td>
+                            <td>
+                                <form action="{{ route('checkout.remove', $id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm">{{ __('messages.delete') }}</button>
+                                </form>
+                            </td>
+                        </tr>
                     @endforeach
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
 
         <h4>{{ __('messages.total:') }} <strong>Rp{{ number_format($grandTotal) }}</strong></h4>
 
         <form action="{{ route('checkout.store') }}" method="POST" class="mt-4">
             @csrf
             <div class="mb-3">
-                <label for="nama">{{ __('messages.full_name') }}</label>
+                <label>{{ __('messages.full_name') }}</label>
                 <input type="text" name="nama" class="form-control" required>
             </div>
             <div class="mb-3">
-                <label for="alamat">{{ __('messages.address') }}</label>
+                <label>{{ __('messages.address') }}</label>
                 <textarea name="alamat" class="form-control" required></textarea>
             </div>
             <div class="mb-3">
-                <label for="no_hp">{{ __('messages.number_phone') }}</label>
+                <label>{{ __('messages.number_phone') }}</label>
                 <input type="text" name="no_hp" class="form-control" required>
             </div>
             <button type="submit" class="btn btn-primary">{{ __('messages.process_checkout') }}</button>
@@ -224,6 +233,7 @@
         <p>{{ __('messages.cart_empty') }}</p>
     @endif
 </div>
+
 
 
     <!-- Product End -->

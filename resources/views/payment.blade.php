@@ -29,6 +29,17 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset ("css/style.css") }}" rel="stylesheet">
+    <style>
+        @media (max-width: 767px) {
+        .table th, .table td {
+            font-size: 14px;
+            padding: 8px;
+        }
+        .btn-sm {
+            font-size: 12px;
+        }
+    }
+    </style>
 </head>
 
 <body>
@@ -115,71 +126,68 @@
 
     <!-- Product Start -->
     <div class="container-xxl bg-light my-6 py-6 pt-0" style="margin: 12rem 0;">
-        <div class="container">
-            <h2>{{ __('messages.payment') }}</h2>
+    <div class="container">
+        <h2>{{ __('messages.payment') }}</h2>
 
-@if(session('success'))
-    <div class="alert alert-success">{{ session('success') }}</div>
-@endif
+        @if(session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>{{ __('messages.name_bakery') }}</th>
-            <th>{{ __('messages.name') }}</th>
-            <th>{{ __('messages.status') }}</th>
-            <th>{{ __('messages.action') }}</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($orders as $order)
-            <tr>
-                <td>{{ $order->product->nama ??  __('messages.not_found') }}</td>
-                <td>{{ $order->user_name }}</td>
-                <td>
-                    @if($order->status == 'pending')
-                        <span style="color: red;">paid</span>
-                    @elseif($order->status == 'paid')
-                        <span style="color: green;">Panding</span>
-                    @endif
-                </td>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>{{ __('messages.name_bakery') }}</th>
+                        <th>{{ __('messages.name') }}</th>
+                        <th>{{ __('messages.status') }}</th>
+                        <th>{{ __('messages.action') }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($orders as $order)
+                        <tr>
+                            <td>{{ $order->product->nama ??  __('messages.not_found') }}</td>
+                            <td>{{ $order->user_name }}</td>
+                            <td>
+                                @if($order->status == 'pending')
+                                    <span class="text-danger">Pending</span>
+                                @elseif($order->status == 'paid')
+                                    <span class="text-success">Paid</span>
+                                @endif
+                            </td>
+                            <td>
+                                @if($order->status == 'pending')
+                                    @php
+                                        $expiredAt = \Carbon\Carbon::parse($order->created_at)->addHours(1);
+                                        $now = \Carbon\Carbon::now();
+                                        $remaining = $expiredAt->diffForHumans($now, [
+                                            'parts' => 2,
+                                            'short' => true,
+                                            'syntax' => \Carbon\CarbonInterface::DIFF_RELATIVE_TO_NOW,
+                                        ]);
+                                    @endphp
 
-                <td>
-                @if($order->status == 'pending')
-                    @php
-                        $expiredAt = \Carbon\Carbon::parse($order->created_at)->addHours(1);
-                        $now = \Carbon\Carbon::now();
-                        $remaining = $expiredAt->diffForHumans($now, [
-                            'parts' => 2,
-                            'short' => true,
-                            'syntax' => \Carbon\CarbonInterface::DIFF_RELATIVE_TO_NOW,
-                        ]);
-                    @endphp
+                                    <p>{{ __('messages.payment_deadline') }} <strong>{{ $expiredAt->format('d M Y H:i') }}</strong> ({{ $remaining }})</p>
+                                    <p>{{ __('messages.account_number') }}</p>
+                                    <strong>1234-5678-9012 (Bank XYZ a.n. QkBakery)</strong>
 
-                    <p>{{ __('messages.payment_deadline') }}<strong>{{ $expiredAt->format('d M Y H:i') }}</strong> ({{ $remaining }})</p>
+                                    <form action="{{ route('payment.upload_proof') }}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        <input type="hidden" name="order_id" value="{{ $order->id }}">
+                                        <label for="payment_proof">{{ __('messages.upload_proof') }}</label>
+                                        <input type="file" name="payment_proof" required class="form-control mt-1">
+                                        <button type="submit" class="btn btn-primary mt-2">{{ __('messages.send') }}</button>
+                                    </form>
+                                @endif
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
-                    <p>{{ __('messages.account_number') }}</p>
-                    <strong>1234-5678-9012 (Bank XYZ a.n. QkBakery)</strong>
-
-                    <form action="{{ route('payment.upload_proof') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <input type="hidden" name="order_id" value="{{ $order->id }}">
-
-                        <label for="payment_proof">{{ __('messages.upload_proof') }}</label>
-                        <input type="file" name="payment_proof" required>
-
-                        <button type="submit" class="btn btn-primary mt-2">{{ __('messages.send') }}</button>
-                    </form>
-                @endif
-
-                </td>
-
-
-
-            </tr>
-        @endforeach
-    </tbody>
-</table>
     <!-- Product End -->
 
 
