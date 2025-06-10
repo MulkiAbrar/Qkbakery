@@ -204,6 +204,7 @@
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>{{ __('messages.alamat') }}</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>{{ __('messages.phone') }}</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>{{ __('messages.email') }}</p>
+                    <small>{{ __('messages.follow_us') }}</small>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="bi bi-tiktok"></i></a>
