@@ -33,6 +33,35 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+    <style>
+        /* Untuk ukuran ikon yang konsisten di semua perangkat */
+.social-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .social-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .social-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+}
+    </style>
 </head>
 
 <body>
@@ -56,10 +85,16 @@
             </div> --}}
             <div class="col-lg-6 px-5 text-end">
                 <small>{{ __('messages.follow_us') }}</small>
-                <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn-lg-square text-primary border-end rounded-0" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn-lg-square text-primary border-end rounded-0" href=""><i class="bi bi-tiktok"></i></a>
-                    <a class="btn-lg-square text-primary pe-0" href="https://www.instagram.com/qikabakery.id"><i class="fab fa-instagram"></i></a>
+                <div class="d-flex justify-content-center pt-2">
+                    <a class="btn btn-square btn-outline-light rounded-circle m-1 social-icon" href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="btn btn-square btn-outline-light rounded-circle m-1 social-icon" href="#">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+                    <a class="btn btn-square btn-outline-light rounded-circle m-1 social-icon" href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
                 </div>
             </div>
         </div>
