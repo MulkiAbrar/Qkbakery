@@ -29,7 +29,7 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset ("css/style.css") }}" rel="stylesheet">
-    <style>
+<style>
         @media (max-width: 767px) {
         .table th, .table td {
             font-size: 14px;
@@ -184,6 +184,7 @@
                     @endforeach
                 </tbody>
             </table>
+
         </div>
     </div>
 </div>

@@ -68,9 +68,6 @@
 
 
     <!-- Navbar Start -->
-    <a href="{{ url('home') }}" class="navbar-brand ms-4 ms-lg-0">
-        <h1 class="text-primary m-0">QkBakery</h1>
-    </a>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-lg-0 px-lg-5">
     <a href="{{ url('home') }}" class="navbar-brand ms-4 ms-lg-0">
         <h1 class="text-primary m-0">QkBakery</h1>

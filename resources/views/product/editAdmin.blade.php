@@ -121,26 +121,26 @@
             <a href="{{ url('/admin/products') }}" class="nav-link">{{ __('messages.product') }}</a>
         </li>
 
-        <!-- Logout icon (mobile only) -->
-        <li class="nav-item d-block d-lg-none mt-2">
-            <form action="{{ route('admin.logout') }}" method="POST" style="display: inline;">
-                @csrf
-                <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">
-                    <img src="{{ asset('img/logout.png') }}" alt="Logout" width="28" class="hover-image">
-                </button>
-            </form>
-        </li>
-    </ul>
+        <!-- Logout (mobile) -->
+                <li class="nav-item d-block d-lg-none mt-3">
+                    <form action="{{ route('admin.logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="nav-link bg-transparent border-0 p-0 m-0 text-white">
+                            {{ __('Logout') }}
+                        </button>
+                    </form>
+                </li>
+            </ul>
 
-    <!-- Logout icon (desktop only) -->
-    <div class="d-none d-lg-block">
-        <form action="{{ route('admin.logout') }}" method="POST" style="display: inline;">
-            @csrf
-            <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">
-                <img src="{{ asset('img/logout.png') }}" alt="Logout" width="28" class="hover-image">
-            </button>
-        </form>
-    </div>
+            <!-- Logout (desktop) -->
+            <div class="d-none d-lg-block ms-3">
+                <form action="{{ route('admin.logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="nav-link bg-transparent border-0 p-0 m-0 text-white">
+                        {{ __('Logout') }}
+                    </button>
+                </form>
+            </div>
 </div>
 
 </nav>
