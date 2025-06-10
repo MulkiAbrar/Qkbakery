@@ -73,7 +73,7 @@
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
-   <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav ms-auto p-4 p-lg-0 text-center w-100">
         <li class="nav-item">
             <a href="{{ url('home') }}" class="nav-link">{{ __('messages.home') }}</a>
