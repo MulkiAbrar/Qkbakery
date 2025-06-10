@@ -90,17 +90,18 @@
             <a href="{{ url('/admin/products') }}" class="nav-link">{{ __('messages.product') }}</a>
         </li>
 
-        <!-- Logout (seperti link menu biasa tapi dalam form) -->
+        <!-- Logout sebagai item menu -->
         <li class="nav-item mt-3">
-            <form action="{{ route('admin.logout') }}" method="POST">
+            <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <img src="{{ asset('img/logout.png') }}" alt="Logout" width="28" class="hover-image">
+            </a>
+            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
                 @csrf
-                <button type="submit" class="nav-link bg-transparent border-0 p-0" style="color: white;">
-                    <img src="{{ asset('img/logout.png') }}" alt="Logout" width="28" class="hover-image">
-                </button>
             </form>
         </li>
     </ul>
 </div>
+
 
 
 </nav>
