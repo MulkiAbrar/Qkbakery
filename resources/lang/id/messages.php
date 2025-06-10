@@ -15,7 +15,7 @@
         'contact_uss' => '//Hubungi Kami',
         'admin' => 'Admin',
         'loading' => 'Memuat...',
-        'best_bakery' => 'Toko Roti Terbaik di Kota Anda',
+        'best_bakery' => 'Toko Kue Terbaik ',
         'we_bake_with_love' => 'Kami Membuat dengan Cinta',
         'bake_description' => 'Kami menyajikan berbagai roti dan kue yang segar setiap hari.',
         'shop_now' => 'Pesan Sekarang',
