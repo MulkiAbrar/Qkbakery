@@ -61,6 +61,7 @@
                     <a class="btn-lg-square text-primary border-end rounded-0" href=""><i class="fab fa-facebook-f"></i></a>
                     <a class="btn-lg-square text-primary border-end rounded-0" href=""><i class="bi bi-tiktok"></i></a>
                     <a class="btn-lg-square text-primary pe-0" href="https://www.instagram.com/qikabakery.id"><i class="fab fa-instagram"></i></a>
+                    <a class="btn-lg-square text-primary pe-0" href="https://www.instagram.com/qikabakery.id"><i class="bi bi-bag"></i></a>
                 </div>
             </div>
         </div>
@@ -297,6 +298,7 @@
                         <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="bi bi-tiktok"></i></a>
                         <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="bi bi-bag"></i></a>
                     </div>
                 </div>
                 {{-- <div class="col-lg-3 col-md-6">
