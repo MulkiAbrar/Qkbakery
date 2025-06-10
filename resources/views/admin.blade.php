@@ -76,7 +76,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav ms-auto p-4 p-lg-0 text-center w-100">
+    <ul class="navbar-nav p-4 p-lg-0 w-100 d-flex flex-column align-items-center">
         <li class="nav-item">
             <a href="{{ url('admin') }}" class="nav-link">{{ __('messages.home') }}</a>
         </li>
@@ -90,7 +90,7 @@
             <a href="{{ url('/admin/products') }}" class="nav-link">{{ __('messages.product') }}</a>
         </li>
 
-        <!-- Logout sebagai item menu -->
+        <!-- Logout icon -->
         <li class="nav-item mt-3">
             <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <img src="{{ asset('img/logout.png') }}" alt="Logout" width="28" class="hover-image">
@@ -101,6 +101,7 @@
         </li>
     </ul>
 </div>
+
 
 
 
