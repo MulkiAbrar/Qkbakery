@@ -86,8 +86,9 @@
             <div class="col-lg-6 px-5 text-end">
                 <small>{{ __('messages.follow_us') }}</small>
                 <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn-lg-square text-primary border-end rounded-0" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn-lg-square text-primary border-end rounded-0" href=""><i class="bi bi-tiktok"></i></a>
+                    <a class="btn-lg-square text-primary border-end rounded-0" href="https://www.facebook.com/share/1J5JUqHzGy/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn-lg-square text-primary border-end rounded-0" href="https://tiktok.com/@qkbakery9"><i class="bi bi-tiktok"></i></a>
+                    <a class="btn-lg-square text-primary border-end rounded-0" href="https://s.shopee.co.id/1qQARgRRVj?share_channel_code=1"><i class="bi bi-bag"></i></a>
                     <a class="btn-lg-square text-primary pe-0" href="https://www.instagram.com/qikabakery.id"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
@@ -242,9 +243,10 @@
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>{{ __('messages.email') }}</p>
                     <small>{{ __('messages.follow_us') }}</small>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="bi bi-tiktok"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://www.facebook.com/share/1J5JUqHzGy/"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://tiktok.com/@qkbakery9"><i class="bi bi-tiktok"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://www.instagram.com/qikabakery.id"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://s.shopee.co.id/1qQARgRRVj?share_channel_code=1"><i class="bi bi-bag"></i></a>
                     </div>
                 </div>
                 {{-- <div class="col-lg-3 col-md-6">
