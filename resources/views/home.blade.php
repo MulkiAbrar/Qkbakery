@@ -70,11 +70,10 @@
     <!-- Navbar Start -->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-lg-0 px-lg-5">
-        <div class="container-fluid">
-            <a href="{{ url('home') }}" class="navbar-brand ms-4 ms-lg-0">
-                <h1 class="text-primary m-0">QkBakery</h1>
-            </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+    <a href="{{ url('home') }}" class="navbar-brand ms-4 ms-lg-0">
+        <h1 class="text-primary m-0">QkBakery</h1>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
