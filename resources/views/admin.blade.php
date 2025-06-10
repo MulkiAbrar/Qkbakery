@@ -76,7 +76,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav flex-column ms-auto p-4 p-lg-0 text-center w-100">
+    <ul class="navbar-nav flex-column flex-lg-row ms-auto p-4 p-lg-0 text-center text-lg-start w-100">
         <li class="nav-item">
             <a href="{{ url('admin') }}" class="nav-link">{{ __('messages.home') }}</a>
         </li>
@@ -90,30 +90,29 @@
             <a href="{{ url('/admin/products') }}" class="nav-link">{{ __('messages.product') }}</a>
         </li>
 
-        <!-- Logout icon -->
-        <li class="nav-item mt-3">
-            <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                <img src="{{ asset('img/logout.png') }}" alt="Logout" width="28" class="hover-image">
-            </a>
-            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+        <!-- Logout untuk mobile (di bawah produk) -->
+        <li class="nav-item d-block d-lg-none mt-3">
+            <form action="{{ route('admin.logout') }}" method="POST">
                 @csrf
+                <button type="submit" class="nav-link bg-transparent border-0 p-0 m-0">
+                    <img src="{{ asset('img/logout.png') }}" alt="Logout" width="28" class="hover-image">
+                </button>
             </form>
         </li>
     </ul>
-</div>
 
-    <!-- Logout icon (desktop only) -->
-    <div class="d-none d-lg-block">
-        <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form-desktop').submit();">
-            <img src="{{ asset('img/logout.png') }}" alt="Logout" width="28" class="hover-image">
-        </a>
-        <form id="logout-form-desktop" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+    <!-- Logout untuk desktop (di sebelah kanan) -->
+    <div class="d-none d-lg-block ms-3">
+        <form action="{{ route('admin.logout') }}" method="POST">
             @csrf
+            <button type="submit" class="nav-link bg-transparent border-0 p-0 m-0">
+                <img src="{{ asset('img/logout.png') }}" alt="Logout" width="28" class="hover-image">
+            </button>
         </form>
     </div>
 </div>
 
-</nav>
+
     <!-- Navbar End -->
 
 
