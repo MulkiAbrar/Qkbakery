@@ -111,7 +111,7 @@
         </form>
     </div>
 </div>
-
+    </nav>
 
     <!-- Navbar End -->
 
