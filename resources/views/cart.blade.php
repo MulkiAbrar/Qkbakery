@@ -98,21 +98,6 @@
     }
 
 </style>
-<script>
-function updateQty(id, change) {
-    const qtyInput = document.getElementById('qty_' + id);
-    let currentQty = parseInt(qtyInput.value);
-    let newQty = currentQty + change;
-    if (newQty < 1) newQty = 1; // minimal 1
-
-    qtyInput.value = newQty;
-    const priceElement = document.getElementById('price_' + id);
-    const totalElement = document.getElementById('total_' + id);
-    const price = parseInt(priceElement.getAttribute('data-price'));
-    const newTotal = price * newQty;
-    totalElement.innerText = 'Rp ' + newTotal.toLocaleString('id-ID');
-}
-</script>
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" role="status"></div>
@@ -255,6 +240,36 @@ function updateQty(id, change) {
                     @endforeach
                 </tbody>
             </table>
+            <script>
+    function updateQty(id, change) {
+        let qtyInput = document.getElementById('qty_' + id);
+        let currentQty = parseInt(qtyInput.value);
+        let newQty = currentQty + change;
+
+        if (newQty < 1) return;
+
+        qtyInput.value = newQty;
+
+        // Kirim ke server untuk update session
+        fetch("{{ route('cart.updateQty') }}", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRF-TOKEN": "{{ csrf_token() }}"
+            },
+            body: JSON.stringify({
+                id: id,
+                quantity: newQty
+            })
+        }).then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                location.reload(); // Refresh halaman untuk memperbarui total harga
+            }
+        });
+    }
+</script>
+
         </div>
     @else
         <p>{{ __('messages.cart_empty') }}</p>

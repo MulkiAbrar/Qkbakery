@@ -47,4 +47,19 @@ class CartController extends Controller
 
         return redirect()->route('cart.index')->with('success', 'Produk dihapus dari cart!');
     }
+    public function updateQty(Request $request)
+{
+    $id = $request->input('id');
+    $qty = $request->input('quantity');
+
+    $cart = session()->get('cart', []);
+    if (isset($cart[$id])) {
+        $cart[$id]['quantity'] = $qty;
+        session()->put('cart', $cart);
+        return response()->json(['success' => true]);
+    }
+
+    return response()->json(['success' => false]);
+}
+
 }

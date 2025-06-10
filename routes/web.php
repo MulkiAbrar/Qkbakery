@@ -46,7 +46,9 @@ Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('car
 // Checkout
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
-Route::delete('/checkout/remove/{id}', [CheckoutController::class, 'remove'])->name('checkout.remove');  // Perbaiki typo di 'checkout'
+Route::delete('/checkout/remove/{id}', [CheckoutController::class, 'remove'])->name('checkout.remove');
+Route::post('/cart/update-qty', [CartController::class, 'updateQty'])->name('cart.updateQty');
+
 
 // Order & Payment
 Route::post('/submit-order', [OrderController::class, 'submitOrder'])->name('order.submit');
@@ -109,38 +111,8 @@ Route::post('/admin/logout', function () {
     return redirect()->route('home');
 })->name('admin.logout');
 
-// Clear cache route
-use Illuminate\Support\Facades\Artisan;
-Route::get('/clear', function () {
-    Artisan::call('config:clear');
-    Artisan::call('cache:clear');
-    Artisan::call('view:clear');
-    return 'Cache cleared!';
 
-});
-Route::get('/dbtest', function () {
-    try {
-        \DB::connection()->getPdo();
-        return "✅ Database connected successfully!";
-    } catch (\Exception $e) {
-        return "❌ Could not connect to the database. Error: " . $e->getMessage();
-    }
-});
 
-use Illuminate\Support\Facades\Schema;
-
-Route::get('/product-test', function () {
-    try {
-        if (!Schema::hasTable('products')) {
-            return "❌ Tabel 'products' tidak ditemukan di database.";
-        }
-
-        $products = \App\Models\Product::all();
-        return response()->json($products);
-    } catch (\Exception $e) {
-        return "❌ ERROR: " . $e->getMessage();
-    }
-});
 
 
 
