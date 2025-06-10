@@ -68,50 +68,56 @@
 
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-lg-0 px-lg-5">
-    <a href="{{ url('home') }}" class="navbar-brand ms-4 ms-lg-0">
-        <h1 class="text-primary m-0">QkBakery</h1>
-    </a>
-    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav flex-column flex-lg-row ms-auto p-4 p-lg-0 text-center text-lg-start w-100">
-        <li class="nav-item">
-            <a href="{{ url('admin') }}" class="nav-link">{{ __('messages.home') }}</a>
-        </li>
-        <li class="nav-item">
-            <a href="{{ url('create') }}" class="nav-link">{{ __('messages.add') }}</a>
-        </li>
-        <li class="nav-item">
-            <a href="{{ url('/admin/orders') }}" class="nav-link">{{ __('messages.order') }}</a>
-        </li>
-        <li class="nav-item">
-            <a href="{{ url('/admin/products') }}" class="nav-link">{{ __('messages.product') }}</a>
-        </li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+        <a href="{{ url('home') }}" class="navbar-brand ms-4 ms-lg-0">
+            <h1 class="text-primary m-0">QkBakery</h1>
+        </a>
+        <!-- Toggle button untuk mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <!-- Logout untuk mobile (di bawah produk) -->
-        <li class="nav-item d-block d-lg-none mt-3">
-            <form action="{{ route('admin.logout') }}" method="POST">
-                @csrf
-                <button type="submit" class="nav-link bg-transparent border-0 p-0 m-0">
-                    <img src="{{ asset('img/logout.png') }}" alt="Logout" width="28" class="hover-image">
-                </button>
-            </form>
-        </li>
-    </ul>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <!-- Menu utama -->
+            <ul class="navbar-nav ms-auto p-4 p-lg-0 text-center text-lg-start w-100 flex-column flex-lg-row">
+                <li class="nav-item">
+                    <a href="{{ url('admin') }}" class="nav-link">{{ __('messages.home') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('create') }}" class="nav-link">{{ __('messages.add') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('/admin/orders') }}" class="nav-link">{{ __('messages.order') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('/admin/products') }}" class="nav-link">{{ __('messages.product') }}</a>
+                </li>
 
-    <!-- Logout untuk desktop (di sebelah kanan) -->
-    <div class="d-none d-lg-block ms-3">
-        <form action="{{ route('admin.logout') }}" method="POST">
-            @csrf
-            <button type="submit" class="nav-link bg-transparent border-0 p-0 m-0">
-                <img src="{{ asset('img/logout.png') }}" alt="Logout" width="28" class="hover-image">
-            </button>
-        </form>
+                <!-- Logout MOBILE: tampil di bawah product -->
+                <li class="nav-item d-block d-lg-none mt-3">
+                    <form action="{{ route('admin.logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="nav-link bg-transparent border-0 p-0">
+                            <img src="{{ asset('img/logout.png') }}" alt="Logout" width="28" class="hover-image">
+                        </button>
+                    </form>
+                </li>
+            </ul>
+
+            <!-- Logout DESKTOP: tampil di kanan luar ul -->
+            <div class="d-none d-lg-block ms-3">
+                <form action="{{ route('admin.logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="bg-transparent border-0 p-0">
+                        <img src="{{ asset('img/logout.png') }}" alt="Logout" width="28" class="hover-image">
+                    </button>
+                </form>
+            </div>
+        </div>
     </div>
-</div>
-    </nav>
+</nav>
+
 
     <!-- Navbar End -->
 
