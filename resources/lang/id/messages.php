@@ -2,7 +2,7 @@
 
 
     return [
-        'welcome' => 'Selamat datang di QK Bakery',
+        'welcome' => 'Selamat datang di QKBakery',
         // General
         'qk_bakery' => 'QkBakery',
         'home' => 'Beranda',
@@ -37,6 +37,7 @@
         'product_bakery' => '//Produk',
         'product_admin2' => '//Produk Admin',
         'upload_proof' => 'Kirim Bukti Transfer:',
+        
 
 
         // cart

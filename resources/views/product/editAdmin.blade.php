@@ -100,7 +100,7 @@
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-lg-0 px-lg-5">
-    <a href="{{ url('home') }}" class="navbar-brand ms-4 ms-lg-0">
+    <a href="{{ url('admin') }}" class="navbar-brand ms-4 ms-lg-0">
         <h1 class="text-primary m-0">{{ __('messages.qk_bakery') }}</h1>
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -137,7 +137,7 @@
                 <form action="{{ route('admin.logout') }}" method="POST">
                     @csrf
                     <button type="submit" class="nav-link bg-transparent border-0 p-0 m-0 text-white">
-                        {{ __('Logout') }}
+                        {{ __('messages.Logout') }}
                     </button>
                 </form>
             </div>
