@@ -94,7 +94,7 @@
         <!-- Cart in mobile only -->
         <li class="nav-item d-block d-lg-none mt-2">
             <a href="{{ url('cart') }}" class="nav-link">
-                <img src="{{ asset('img/icons8-cart-50.png') }}" alt="Cart" width="28">
+                <img src="{{ asset('img/icons8-cart-50.png') }}" class="hover-image" alt="Cart" width="28">
             </a>
         </li>
     </ul>
@@ -102,7 +102,7 @@
     <!-- Cart in desktop only -->
     <div class="d-none d-lg-block">
         <a href="{{ url('cart') }}" class="nav-link">
-            <img src="{{ asset('img/icons8-cart-50.png') }}" alt="Cart" width="28">
+            <img src="{{ asset('img/icons8-cart-50.png') }}" class="hover-image" alt="Cart" width="28">
         </a>
     </div>
 </div>
