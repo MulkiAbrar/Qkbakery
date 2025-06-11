@@ -89,8 +89,6 @@
         <li class="nav-item">
             <a href="{{ url('/admin/products') }}" class="nav-link">{{ __('messages.product') }}</a>
         </li>
-
- <!-- Logout (mobile) -->
                 <li class="nav-item d-block d-lg-none mt-3">
                     <form action="{{ route('admin.logout') }}" method="POST">
                         @csrf
@@ -100,13 +98,11 @@
                     </form>
                 </li>
             </ul>
-
-            <!-- Logout (desktop) -->
             <div class="d-none d-lg-block ms-3">
                 <form action="{{ route('admin.logout') }}" method="POST">
                     @csrf
                     <button type="submit" class="nav-link bg-transparent border-0 p-0 m-0 text-white">
-                        {{ __('Logout') }}
+                        {{ __('messages.Logout') }}
                     </button>
                 </form>
             </div>

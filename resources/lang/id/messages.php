@@ -37,7 +37,7 @@
         'product_bakery' => '//Produk',
         'product_admin2' => '//Produk Admin',
         'upload_proof' => 'Kirim Bukti Transfer:',
-        
+
 
 
         // cart
@@ -132,7 +132,7 @@
         // Account
         'login' => 'Masuk',
         'register' => 'Daftar',
-        'logout' => 'Keluar',
+        'Logout' => 'Keluar',
         'my_account' => 'Akun Saya',
         'profile' => 'Profil',
         'update_profile' => 'Perbarui Profil',
