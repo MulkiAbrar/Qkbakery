@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Ulasan;
+use App\Models\Rating;
 use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
     public function adminIndex()
     {
-        $reviews = Ulasan::latest()->get();
+        $reviews = Rating::latest()->get();
         return view('admin.review', compact('reviews'));
     }
 
@@ -23,7 +23,7 @@ class ReviewController extends Controller
             'message' => 'required|string',
         ]);
 
-        Ulasan::create([
+        Rating::create([
             'name' => $request->name,
             'email' => $request->email,
             'subject' => $request->subject,
