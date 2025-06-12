@@ -117,7 +117,7 @@ Route::post('/admin/logout', function () {
 
 Route::get('/admin/reviews', function () {
     $reviews = Review::latest()->paginate(10); // pagination
-    return view('admin.reviews.index', compact('reviews'));
+    return view('review', compact('reviews'));
 })->name('admin.reviews')->middleware('auth');
 
 
