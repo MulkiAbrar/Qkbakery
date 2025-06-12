@@ -90,7 +90,7 @@
             <a href="{{ url('product') }}" class="nav-link">{{ __('messages.product') }}</a>
         </li>
         <li class="nav-item">
-            <a href="{{ url('kontak') }}" class="nav-link">{{ __('messages.contact') }}</a>
+            <a href="{{ url('/review') }}" class="nav-link">{{ __('messages.contact') }}</a>
         </li>
         <li class="nav-item">
             <a href="{{ url('/admin/login') }}" class="nav-link">{{ __('messages.admin') }}</a>

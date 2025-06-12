@@ -123,6 +123,10 @@ Route::get('/admin/reviews', [ReviewController::class, 'adminIndex'])->name('adm
 // })->name('admin.reviews');
 
 
+Route::post('/ulasan/kirim', [ReviewController::class, 'store']);
+Route::get('/review', [ReviewController::class, 'index']); // Halaman admin
+
+
 
 use Illuminate\Support\Facades\Artisan;
 

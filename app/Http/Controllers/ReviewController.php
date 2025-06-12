@@ -10,8 +10,8 @@ class ReviewController extends Controller
 {
     public function adminIndex()
     {
-        $reviews = Review::latest()->get(); 
-        return view('admin.reviews', compact('reviews'));
+        $reviews = Review::latest()->get();
+        return view('kontak', compact('reviews'));
     }
 
     public function store(Request $request)
