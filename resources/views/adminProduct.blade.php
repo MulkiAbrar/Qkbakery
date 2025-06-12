@@ -132,12 +132,11 @@
                 </button>
             </form>
         </li>
-
-        <!-- Untuk desktop -->
+    </ul>
         <div class="d-none d-lg-block ms-3">
             <form action="{{ route('admin.logout') }}" method="POST">
                 @csrf
-                <button type="submit" class="logout-button nav-item">
+                <button type="submit" class="logout-button">
                     {{ __('messages.Logout') }}
                 </button>
             </form>

@@ -92,7 +92,7 @@
         <li class="nav-item">
             <a href="{{ url('/admin/review') }}" class="nav-link">{{ __('messages.review') }}</a>
         </li>
-            <li class="nav-item d-block d-lg-none mt-3">
+        <li class="nav-item d-block d-lg-none mt-3">
                 <form action="{{ route('admin.logout') }}" method="POST">
                     @csrf
                     <button type="submit" class="logout-button">
@@ -100,12 +100,11 @@
                     </button>
                 </form>
             </li>
-
-            <!-- Untuk desktop -->
+        </ul>
             <div class="d-none d-lg-block ms-3">
                 <form action="{{ route('admin.logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="logout-button nav-item">
+                    <button type="submit" class="logout-button">
                         {{ __('messages.Logout') }}
                     </button>
                 </form>
