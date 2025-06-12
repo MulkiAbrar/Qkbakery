@@ -9,20 +9,25 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+
     public function up(): void
     {
-        Schema::create('ulasans', function (Blueprint $table) {
-            $table->id_user();
+        Schema::create('rating', function (Blueprint $table) {
+            $table->id();
             $table->string('name');
             $table->string('email');
-            $table->string('subject');
-            $table->text('message');
+            $table->string('subject');   // Contoh: 'Brownies', 'Kue Tart'
+            $table->text('message');     // Isi ulasan pelanggan
             $table->timestamps();
         });
     }
 
+
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('ulasans');
+        Schema::dropIfExists('rating');
     }
 };
