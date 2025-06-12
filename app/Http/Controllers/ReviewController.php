@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
+    public function adminIndex()
+    {
+        $reviews = Review::latest()->get(); // Atau sesuaikan query-nya
+        return view('admin.reviews', compact('reviews'));
+    }
+
     public function store(Request $request)
     {
         $request->validate([
