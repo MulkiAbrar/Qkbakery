@@ -127,14 +127,14 @@ Route::get('/admin/review', [ReviewController::class, 'adminIndex'])->name('admi
 
 
 
-use Illuminate\Support\Facades\Artisan;
+Route::get('/sql', function () {
+    // Contoh perintah SQL
+    DB::statement("DROP TABLE IF EXISTS reviews");
+    DB::statement("DROP TABLE IF EXISTS ulasan");
 
-Route::get('/migrate', function () {
-    Artisan::call('migrate', [
-        '--force' => true
-    ]);
-    return 'Migrasi berhasil dijalankan.';
+    return 'Semua tabel berhasil dihapus';
 });
+
 
 
 
