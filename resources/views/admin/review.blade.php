@@ -127,37 +127,33 @@
     <!-- Page Header End -->
 
     <!-- Admin Review Section -->
-        <div class="container my-5">
-            <h2 class="mb-4 text-center text-dark">{{ __('messages.admin_reviews') ?? 'User Reviews' }}</h2>
+    <div class="container my-5">
+    <h2 class="mb-4 text-center text-dark">{{ __('messages.admin_reviews') ?? 'User Reviews' }}</h2>
 
-            @if(count($reviews) > 0)
-                <div class="row">
-                    @foreach($reviews as $review)
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card mb-4 shadow-sm border-0 h-100">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $review->name }}</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">{{ $review->email }}</h6>
-                                    <div class="mb-2">
-                                        @for ($i = 1; $i <= 5; $i++)
-                                            <i class="bi {{ $i <= $review->rating ? 'bi-star-fill text-warning' : 'bi-star text-muted' }}"></i>
-                                        @endfor
-                                    </div>
-                                    <p class="card-text">{{ $review->comment }}</p>
-                                </div>
-                                <div class="card-footer bg-transparent border-0 text-end">
-                                    <small class="text-muted">{{ $review->created_at->format('d M Y, H:i') }}</small>
-                                </div>
-                            </div>
+    @if(count($reviews) > 0)
+        <div class="row">
+            @foreach($reviews as $review)
+                <div class="col-md-6 col-lg-4">
+                    <div class="card mb-4 shadow-sm border-0 h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $review->name }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ $review->email }}</h6>
+                            <p class="fw-bold mb-1">{{ $review->subject }}</p>
+                            <p class="card-text">{{ $review->message }}</p>
                         </div>
-                    @endforeach
+                        <div class="card-footer bg-transparent border-0 text-end">
+                            <small class="text-muted">{{ $review->created_at->format('d M Y, H:i') }}</small>
+                        </div>
+                    </div>
                 </div>
-            @else
-                <div class="alert alert-info text-center">
-                    {{ __('messages.no_reviews_yet') ?? 'Belum ada ulasan yang masuk.' }}
-                </div>
-            @endif
+            @endforeach
         </div>
+    @else
+        <div class="alert alert-info text-center">
+            {{ __('messages.no_reviews_yet') ?? 'Belum ada ulasan yang masuk.' }}
+        </div>
+    @endif
+</div>
 
 
 
