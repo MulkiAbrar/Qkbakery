@@ -95,7 +95,7 @@
                 <li class="nav-item d-block d-lg-none mt-3">
                     <form action="{{ route('admin.logout') }}" method="POST">
                         @csrf
-                        <button type="submit" class="hover-image">
+                        <button type="submit" class="nav-link">
                             {{ __('messages.Logout') }}
                         </button>
                     </form>
@@ -104,7 +104,7 @@
             <div class="d-none d-lg-block ms-3">
                 <form action="{{ route('admin.logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="hover-image"">
+                    <button type="submit" class="nav-link">
                         {{ __('messages.Logout') }}
                     </button>
                 </form>
