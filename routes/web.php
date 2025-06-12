@@ -127,14 +127,15 @@ Route::get('/admin/review', [ReviewController::class, 'adminIndex'])->name('admi
 
 
 
-use Illuminate\Support\Facades\Artisan;
+// use Illuminate\Support\Facades\Artisan;
 
-Route::get('/migrate', function () {
-    Artisan::call('migrate', [
-        '--force' => true
-    ]);
-    return 'Migrations completed!';
-});
+// Route::get('/migrate', function () {
+//     Artisan::call('migrate', [
+//         '--force' => true
+//     ]);
+//     return 'Migrasi berhasil dijalankan.';
+// });
+
 
 
 
