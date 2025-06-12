@@ -524,3 +524,15 @@ h6,
 }
 
 
+.logout-button {
+    background: transparent;
+    border: none;
+    color: var(--light);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.logout-button:hover {
+    color: var(--primary); /* Warna berubah saat hover */
+    cursor: pointer;
+}
