@@ -57,7 +57,6 @@ Route::post('/submit-order', [OrderController::class, 'submitOrder'])->name('ord
 Route::get('/payment/{order}', [OrderController::class, 'showPayment'])->name('payment.show');
 Route::post('/payment/confirm/{order}', [OrderController::class, 'confirmPayment'])->name('payment.confirm');
 Route::get('/admin/orders', [OrderController::class, 'adminOrders'])->name('adminProduct');
-Route::get('/admin/reviews', [ReviewController::class, 'adminIndex'])->name('admin.reviews');
 // Admin orders
 Route::prefix('admin')->group(function () {
     Route::get('/orders', [AdminOrderController::class, 'index'])->name('admin.orders');
@@ -114,10 +113,11 @@ Route::post('/admin/logout', function () {
 })->name('admin.logout');
 
 
-Route::get('/admin/reviews', function () {
-    $reviews = Review::latest()->paginate(10);
-    return view('review', compact('reviews'));
-})->name('admin.reviews');
+Route::get('/admin/reviews', [ReviewController::class, 'adminIndex'])->name('admin.reviews');
+// Route::get('/admin/reviews', function () {
+//     $reviews = Review::latest()->paginate(10);
+//     return view('review', compact('reviews'));
+// })->name('admin.reviews');
 
 
 
