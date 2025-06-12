@@ -89,6 +89,9 @@
         <li class="nav-item">
             <a href="{{ url('/admin/products') }}" class="nav-link">{{ __('messages.product') }}</a>
         </li>
+        <li class="nav-item">
+            <a href="{{ url('/admin/reviews') }}" class="nav-link">{{ __('messages.product') }}</a>
+        </li>
                 <li class="nav-item d-block d-lg-none mt-3">
                     <form action="{{ route('admin.logout') }}" method="POST">
                         @csrf
