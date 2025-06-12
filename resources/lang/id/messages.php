@@ -37,6 +37,8 @@
         'product_bakery' => '//Produk',
         'product_admin2' => '//Produk Admin',
         'upload_proof' => 'Kirim Bukti Transfer:',
+        'admin_reviews' => 'Ulasan Pengguna',
+    'no_reviews_yet' => 'Belum ada ulasan yang masuk.',
 
 
 

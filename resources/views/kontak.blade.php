@@ -149,29 +149,34 @@
             </div>
             <div class="row g-0 justify-content-center">
                 <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
-                    <form>
+                    @if (session('success'))
+                        <div class="alert alert-success mt-3">{{ session('success') }}</div>
+                    @endif
+
+                <form action="{{ route('review.store') }}" method="POST">
+                        @csrf
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required>
                                     <label for="name">{{ __('messages.your_name') }}</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
                                     <label for="email">{{ __('messages.your_email') }}</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
                                     <label for="subject">{{ __('messages.subject') }}</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 200px"></textarea>
+                                    <textarea class="form-control" name="message" id="message" placeholder="Leave a message here" style="height: 200px" required></textarea>
                                     <label for="message">{{ __('messages.messages') }}</label>
                                 </div>
                             </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Review;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminOrderController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -55,6 +57,7 @@ Route::post('/submit-order', [OrderController::class, 'submitOrder'])->name('ord
 Route::get('/payment/{order}', [OrderController::class, 'showPayment'])->name('payment.show');
 Route::post('/payment/confirm/{order}', [OrderController::class, 'confirmPayment'])->name('payment.confirm');
 Route::get('/admin/orders', [OrderController::class, 'adminOrders'])->name('adminProduct');
+Route::post('/review', [ReviewController::class, 'store'])->name('review.store');
 
 // Admin orders
 Route::prefix('admin')->group(function () {
@@ -112,6 +115,13 @@ Route::post('/admin/logout', function () {
 })->name('admin.logout');
 
 
+Route::get('/admin/reviews', function () {
+    $reviews = Review::latest()->paginate(10); // pagination
+    return view('admin.reviews.index', compact('reviews'));
+})->name('admin.reviews')->middleware('auth');
+
+
+
 use Illuminate\Support\Facades\Artisan;
 
 Route::get('/migrate', function () {
@@ -120,6 +130,9 @@ Route::get('/migrate', function () {
     ]);
     return 'Migrations completed!';
 });
+
+
+
 
 
 
