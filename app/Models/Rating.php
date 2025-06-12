@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rating extends Model
 {
-    protected $table = 'ulasan';
+    protected $table = 'rating';
 
     protected $fillable = ['name', 'email', 'subject', 'message'];
 }

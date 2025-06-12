@@ -127,13 +127,13 @@ Route::get('/admin/review', [ReviewController::class, 'adminIndex'])->name('admi
 
 
 
-Route::get('/sql', function () {
-    // Contoh perintah SQL
-    DB::statement("DROP TABLE IF EXISTS reviews");
-    DB::statement("DROP TABLE IF EXISTS ulasan");
+// Route::get('/sql', function () {
+//     // Contoh perintah SQL
+//     DB::statement("DROP TABLE IF EXISTS reviews");
+//     DB::statement("DROP TABLE IF EXISTS ulasan");
 
-    return 'Semua tabel berhasil dihapus';
-});
+//     return 'Semua tabel berhasil dihapus';
+// });
 
 
 
