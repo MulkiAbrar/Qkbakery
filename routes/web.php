@@ -116,14 +116,13 @@ Route::post('/admin/logout', function () {
 })->name('admin.logout');
 
 
-Route::get('/admin/reviews', [ReviewController::class, 'adminIndex'])->name('admin.reviews');
 // Route::get('/admin/reviews', function () {
 //     $reviews = Review::latest()->paginate(10);
 //     return view('review', compact('reviews'));
 // })->name('admin.reviews');
 
 
-Route::post('/ulasan/kirim', [ReviewController::class, 'store'])->name('review.store');
+Route::post('/review', [ReviewController::class, 'store'])->name('review.store');
 Route::get('/admin/review', [ReviewController::class, 'adminIndex'])->name('admin.review');
 
 
