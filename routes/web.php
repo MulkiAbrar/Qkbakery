@@ -19,7 +19,10 @@ Route::redirect('/', '/home');
 // Halaman umum
 Route::view('/home', 'home')->name('home');
 Route::view('/about', 'about');
-Route::view('/kontak', 'kontak');
+Route::get('/kontak', function () {
+    return view('kontak');
+});
+
 Route::view('/payment', 'payment');
 
 // Resource Product (CRUD lengkap di /product)
