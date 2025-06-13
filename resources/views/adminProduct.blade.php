@@ -154,7 +154,7 @@
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a class="text-white" href="#">{{ __('messages.home') }}</a></li>
-                    <li class="breadcrumb-item text-primary active" aria-current="page">{{ __('messages.product') }}</li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">{{ __('messages.order_listt') }}</li>
                 </ol>
             </nav>
         </div>
@@ -182,8 +182,8 @@
                 </div>
             </div> --}}
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <p class="text-primary text-uppercase mb-2">{{ __('messages.bakery_admin') }}</p>
-                <h1 class="display-6 mb-4">{{ __('messages.explore') }}</h1>
+                <p class="text-primary text-uppercase mb-2">{{ __('messages.order_list') }}</p>
+                {{-- <h1 class="display-6 mb-4">{{ __('messages.explore') }}</h1> --}}
             </div>
             <div class="container">
     <div class="table-responsive">

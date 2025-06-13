@@ -67,6 +67,8 @@
         'back' => 'Kembali',
         'product_admin' => 'Produk Admin',
         'bakery_admin' => '//Admin Produk',
+        'order_list' => '//Pesanan',
+        'order_listt' => 'Pesanan',
         'explore' => 'Jelajahi Kategori Produk Roti Kami',
         'list_order' => 'Daftar Pesanan (Admin)',
         'name_customer' => 'Nama Pelanggan',
